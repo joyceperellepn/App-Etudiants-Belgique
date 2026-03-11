@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon Guide Belgique - MVP</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; line-height: 1.6; }
+        .guide-box { border: 1px solid #ccc; padding: 15px; margin-top: 20px; border-radius: 8px; }
+        .item { display: block; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <h1>🇧🇪 Guide Administratif Étudiant</h1>
+    <p>Sélectionnez votre profil pour voir vos démarches :</p>
+
+    <select id="profilSelect">
+        <option value="non-ue">Étudiant Non-Européen (ex: Cameroun)</option>
+        <option value="ue">Étudiant Européen (ex: France)</option>
+    </select>
+
+    <button onclick="genererGuide()">Générer mon guide</button>
+
+    <div id="resultat" class="guide-box" style="display:none;">
+        <h3>Ma Check-list personnalisée :</h3>
+        <div id="listeCheckboxes"></div>
+    </div>
+
+    <script>
+        async function genererGuide() {
+            const profil = document.getElementById('profilSelect').value;
+            const container = document.getElementById('listeCheckboxes');
+            const box = document.getElementById('resultat');
+
+            // Appel à l'API (Backend)
+            const reponse = await fetch(`http://localhost:3000/demarches/${profil}`);
+            const data = await reponse.json();
+
+            // Affichage des résultats
+            container.innerHTML = ""; 
+            data.demarches.forEach(etape => {
+                container.innerHTML += `
+                    <label class="item">
+                        <input type="checkbox"> ${etape}
+                    </label>`;
+            });
+            box.style.display = "block";
+        }
+    </script>
+</body>
+</html>
