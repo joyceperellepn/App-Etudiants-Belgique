@@ -8,6 +8,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # je dis a github que mon projet est sur le sous dossier projet est dans le sous-dossier
+    defaults:
+      run:
+        working-directory: ./App-Etudiants-Belgique
     steps:
       - uses: actions/checkout@v4
       - name: Setup Node.js
