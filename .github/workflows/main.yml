@@ -1,3 +1,4 @@
+
 name: CI Student App
 on:
   push:
@@ -8,15 +9,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # je dis a github que mon projet est sur le sous dossier projet est dans le sous-dossier
-    defaults:
-      run:
-        working-directory: ./App-Etudiants-Belgique
     steps:
       - uses: actions/checkout@v4
+      
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: npm install
-      - run: npm run build --if-present
+
+      - name: Install and Build
+        # On combine le "cd" et le "npm install" sur la même ligne
+        run: |
+          cd App-Etudiants-Belgique
+          npm install
+          npm run build --if-present  
