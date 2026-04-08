@@ -1,23 +1,35 @@
-# 🇧🇪 App Étudiants Belgique
+# App Étudiants Belgique
 
-Bienvenue sur le projet de plateforme centralisée pour les étudiants en Belgique.
+Une plateforme centralisée conçue pour faciliter la vie des étudiants en Belgique : recherche de Kots, partage de notes , entraide académique.
 
-  Diagramme de Cas d'Utilisation (Use Case)
-Acteur Principal :Étudiant / Futur Étudiant
-- S'authentifier :Créer un compte et se connecter via email académique.
-- Rechercher : Trouver une Université ou une Haute École par ville.
-- S'informer : Consulter les aides financières (Bourses de la Fédération Wallonie-Bruxelles).
-- Gérer : Modifier son profil et ses préférences.
 
----
 
- Gestion de Projet
-Le suivi des tâches est disponible dans le fichier [BACKLOG.md](./BACKLOG.md).
-- Méthodologie : Agile / Scrum.
-- Conventions : Angular (Commits et Branches).
+# Présentation du Projet
+Ce projet vise à répondre aux besoins spécifiques des étudiants belges en regroupant des services essentiels (logement, documents, forum) sur une interface moderne et sécurisée.
 
----
+## État d'avancement 
+Le projet est actuellement en phase de **conception technique**. Les documents stratégiques ont été rédigés pour préparer le développement :
 
- CI/CD (Automatisation)
-Le projet utilise *GitHub Actions* pour valider chaque modification. 
-La configuration se trouve dans `.github/workflows/main.yml`.
+* **Choix Technologiques :** Justification de la stack (React, Node.js, PostgreSQL).
+* **Plan de Sécurité :** Stratégie de protection des données (RGPD, Chiffrement, JWT).
+* **Politique de Sauvegarde :** Plan de continuité des données.
+* **Roadmap :** Calendrier prévisionnel du développement.
+
+ **[Consulter la Documentation Technique Complète ici](./DOCUMENTATION.md)**
+
+
+## Stack Technique (Prévisionnelle)
+* **Frontend :** React.js
+* **Backend :** Node.js / Express
+* **Base de données :** PostgreSQL
+* **Authentification :** Firebase Auth / JWT
+
+
+
+##  Structure du Repository
+* `/src` : Contient le code source (en cours de développement).
+* `DOCUMENTATION.md` : Détails techniques, benchmark et sécurité.
+* `README.md` : Présentation générale du projet.
+
+
+
